@@ -1,28 +1,28 @@
 package com.sparta.scheduler.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDateTime;
+
+@Builder
 @Getter
 @AllArgsConstructor
 public class Scheduler {
     private int id;
+    @Setter
     private String title;
+    @Setter
     private String detail;
+    @Setter
     private int deadLine;
-    private int dateCreated;
-    private int dateModified;
+    private LocalDateTime dateCreated;
+    @Setter
+    private LocalDateTime dateModified;
     private boolean isPublic;
     private String humanName;
     private String pw;
 
-public Scheduler(String humanName, String pw, String title, String detail, int deadLine, boolean isPublic) {
-    this.title = title;
-    this.detail = detail;
-    this.humanName = humanName;
-    this.pw = pw;
-    this.deadLine = deadLine;
-    this.isPublic = isPublic;
-
-}
 }
